@@ -1010,84 +1010,6 @@
             </div>
         </section>
 
-        <!-- THÓI QUEN TUẦN & BIỂU ĐỒ STREAK -->
-        <section id="sec-habits" class="glass-panel bg-slate-800/90 border border-slate-700 rounded-3xl p-5 sm:p-6 shadow-xl space-y-6 scroll-mt-4">
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-700/80 pb-4">
-                <div>
-                    
-                    <div class="flex flex-wrap items-center gap-2">
-                        <h2 class="text-lg sm:text-xl font-extrabold text-white uppercase tracking-tight flex items-center gap-2">
-                            <i data-lucide="calendar-check-2" class="w-5 h-5 text-sky-400"></i>
-                            Thói Quen Tuần & Biểu Đồ Streak
-                        </h2>
-                        <a href="https://keep.google.com/?note=1luNM8yLRgbJrUyV9N731g3MVM2xYjemSlCYk-TiX6ukmn5kieKsttzjyHYl80cY" target="_blank" class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold bg-amber-500/20 text-amber-300 border border-amber-500/30 hover:underline">
-                            ✓ Chuẩn Google Keep (9 Mục tiêu 60kg)
-                        </a>
-                    </div>
-                    
-                </div>
-
-                <div class="flex flex-wrap gap-1.5">
-                    <button onclick="openWorkspaceSyncModal()" class="tap-btn min-h-[40px] bg-amber-500/20 hover:bg-amber-500/30 border border-amber-500/40 text-amber-300 font-extrabold px-3 py-1.5 rounded-2xl text-xs">
-                        🔗 Nạp từ Keep
-                    </button>
-                    <button onclick="syncKeepHabitsDefault()" class="tap-btn min-h-[40px] bg-slate-700 hover:bg-slate-600 text-sky-300 font-bold px-3 py-1.5 rounded-2xl text-xs">
-                        🔄 Nạp chuẩn Keep
-                    </button>
-                    <button onclick="checkAllToday()" class="tap-btn min-h-[40px] bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-extrabold px-3.5 py-1.5 rounded-2xl text-xs flex items-center justify-center gap-1.5 shadow-lg shadow-emerald-500/20">
-                        <i data-lucide="check-check" class="w-4 h-4"></i> Tích hết hôm nay
-                    </button>
-                </div>
-            </div>
-
-            <div>
-                <form id="add-habit-form" class="flex gap-2 mb-4">
-                    <input type="text" id="habit-input" placeholder="Nhập thói quen kỷ luật hằng ngày mới..." required
-                        class="bg-slate-900 border border-slate-700 text-white rounded-2xl px-4 py-2.5 flex-1">
-                    <button type="submit" class="tap-btn bg-sky-500 hover:bg-sky-400 text-slate-950 font-extrabold px-4 py-2.5 rounded-2xl text-xs sm:text-sm flex items-center gap-1 shrink-0">
-                        <i data-lucide="plus" class="w-4 h-4"></i> Thêm
-                    </button>
-                </form>
-
-                <div id="habit-mobile-cards" class="md:hidden space-y-3"></div>
-
-                <div class="hidden md:block overflow-x-auto">
-                    <table class="w-full text-left border-collapse">
-                        <thead>
-                            <tr id="habit-table-header" class="border-b border-slate-700 text-slate-400 text-xs uppercase"></tr>
-                        </thead>
-                        <tbody id="habit-table-body" class="divide-y divide-slate-700/60 text-sm"></tbody>
-                    </table>
-                </div>
-
-                <div class="mt-4 pt-3 border-t border-slate-700/70 flex flex-wrap items-center justify-between gap-2 text-xs sm:text-sm text-slate-400">
-                    <span>Nhấn giữ nút <strong>⋮⋮</strong> ở đầu mục để trượt lên/xuống di chuyển • Chạm vào tên để sửa</span>
-                    <span id="today-summary-badge" class="font-extrabold text-emerald-400">Hôm nay: 0/0 mục tiêu</span>
-                </div>
-            </div>
-
-            <!-- 2 Biểu đồ Streak & Phong độ tuần -->
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 pt-2 border-t border-slate-700/70">
-                <div class="bg-slate-900/75 border border-slate-700/80 rounded-2xl p-4">
-                    <h3 class="text-xs sm:text-sm font-extrabold text-white uppercase flex items-center gap-2 mb-1">
-                        <i data-lucide="bar-chart-2" class="w-4 h-4 text-amber-400"></i>
-                        Biểu Đồ Chuỗi Ngày Liên Tiếp (Streak)
-                    </h3>
-                    <p class="text-[11px] text-slate-400 mb-3">Tổng số ngày tích lũy của từng thói quen</p>
-                    <div class="relative h-56"><canvas id="streakChart"></canvas></div>
-                </div>
-
-                <div class="bg-slate-900/75 border border-slate-700/80 rounded-2xl p-4">
-                    <h3 class="text-xs sm:text-sm font-extrabold text-white uppercase flex items-center gap-2 mb-1">
-                        <i data-lucide="activity" class="w-4 h-4 text-emerald-400"></i>
-                        Phong Độ Hoàn Thành Trong Tuần (T2 – CN)
-                    </h3>
-                    <p class="text-[11px] text-slate-400 mb-3">Số lượng thói quen hoàn thành qua từng ngày</p>
-                    <div class="relative h-56"><canvas id="dailyProgressChart"></canvas></div>
-                </div>
-            </div>
-        </section>
-
         <!-- KHỐI MỚI 3: KHUNG PHẢN TƯ CUỐI NGÀY (22:15) TRƯỚC KHI ĐI NGỦ -->
         <section id="sec-reflection" class="glass-panel bg-gradient-to-br from-slate-900 via-slate-800/95 to-indigo-950/40 border border-indigo-500/40 rounded-3xl p-5 sm:p-6 shadow-xl space-y-4 scroll-mt-4">
             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-700/80 pb-3.5">
@@ -1171,9 +1093,9 @@
                 <i data-lucide="dumbbell" class="w-5 h-5"></i>
                 <span class="text-[9px] font-bold mt-1">Thể lực</span>
             </a>
-            <a href="#sec-habits" class="tap-btn flex flex-col items-center justify-center py-1.5 text-teal-400">
-                <i data-lucide="check-square" class="w-5 h-5"></i>
-                <span class="text-[9px] font-bold mt-1">Thói quen</span>
+            <a href="#sec-schedule" class="tap-btn flex flex-col items-center justify-center py-1.5 text-teal-400">
+                <i data-lucide="calendar-range" class="w-5 h-5"></i>
+                <span class="text-[9px] font-bold mt-1">Lịch trình</span>
             </a>
         </div>
     </nav>
@@ -4532,131 +4454,7 @@
             renderDashboard();
         }
 
-        document.getElementById('add-habit-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const input = document.getElementById('habit-input');
-            const name = input.value.trim();
-            if (name) {
-                habits.push({ id: Date.now(), name, carriedStreak: 0, days: [false, false, false, false, false, false, false] });
-                input.value = '';
-                saveAll();
-                renderDashboard();
-                showToast('Đã thêm thói quen mới!');
-            }
-        });
-
-        function renderTable() {
-            const todayIdx = getTodayIndex();
-            const mobileContainer = document.getElementById('habit-mobile-cards');
-            mobileContainer.innerHTML = '';
-
-            const theadTr = document.getElementById('habit-table-header');
-            let headerHtml = `<th class="py-3 px-2 min-w-[200px]">Thói quen ưu tiên trong ngày</th>`;
-            DAYS.forEach((d, idx) => {
-                const isToday = idx === todayIdx;
-                headerHtml += `
-                    <th class="py-3 px-1 text-center w-11 ${isToday ? 'today-col text-sky-300 font-extrabold rounded-t-xl' : ''}">
-                        <div class="flex flex-col items-center">
-                            <span>${d}</span>
-                            ${isToday ? '<span class="w-1.5 h-1.5 rounded-full bg-sky-400 mt-0.5"></span>' : ''}
-                        </div>
-                    </th>
-                `;
-            });
-            headerHtml += `<th class="py-3 px-2 text-center w-20">Chuỗi</th><th class="py-3 px-1 text-right w-10">Xóa</th>`;
-            theadTr.innerHTML = headerHtml;
-
-            const tbody = document.getElementById('habit-table-body');
-            tbody.innerHTML = '';
-            let doneTodayCount = 0;
-
-            habits.forEach((habit) => {
-                const totalStreak = getTotalStreak(habit);
-                const weekDone = habit.days.filter(Boolean).length;
-                const weekPct = Math.round((weekDone / 7) * 100);
-                if (habit.days[todayIdx]) doneTodayCount++;
-
-                const mCard = document.createElement('div');
-                mCard.dataset.dragItem = 'habit-mobile';
-                mCard.dataset.itemId = String(habit.id);
-                mCard.className = 'bg-slate-900/90 border border-slate-700/80 rounded-2xl p-3.5 space-y-3 transition';
-                const mobileButtonsHtml = habit.days.map((done, idx) => {
-                    const isToday = idx === todayIdx;
-                    return `
-                        <button onclick="toggleDay(${habit.id}, ${idx})" 
-                            class="tap-btn min-h-[44px] rounded-xl flex flex-col items-center justify-center border font-bold ${
-                                done ? 'bg-emerald-500 border-emerald-400 text-slate-950 shadow-md' : isToday ? 'bg-slate-800 border-sky-400 text-sky-300' : 'bg-slate-800/60 border-slate-700 text-slate-400'
-                            }">
-                            <span class="text-[10px] opacity-80">${DAYS[idx]}</span>
-                            <span class="text-sm font-extrabold mt-0.5">${done ? '✓' : '•'}</span>
-                        </button>
-                    `;
-                }).join('');
-
-                mCard.innerHTML = `
-                    <div class="flex items-start justify-between gap-2.5">
-                        <div class="flex items-center gap-2.5 flex-1 min-w-0">
-                            <div class="drag-handle min-w-[36px] min-h-[44px] px-1.5 rounded-xl bg-slate-800/85 hover:bg-slate-700 border border-slate-700/80 text-slate-400 hover:text-sky-300 flex items-center justify-center shrink-0" title="Nhấn giữ và trượt lên/xuống để di chuyển thói quen">
-                                <i data-lucide="grip-vertical" class="w-4 h-4 pointer-events-none"></i>
-                            </div>
-                            <div onclick="editHabitName(${habit.id})" class="font-bold text-white text-xs sm:text-sm leading-snug flex-1 cursor-pointer hover:text-sky-300">${habit.name}</div>
-                        </div>
-                        <div class="flex items-center gap-1.5 shrink-0">
-                            <span class="px-2.5 py-1 rounded-full text-xs font-extrabold ${totalStreak >= 5 ? 'bg-amber-500/20 text-amber-300 border border-amber-500/30' : 'bg-slate-800 text-slate-300'}">🔥 ${totalStreak}d</span>
-                            <button onclick="deleteHabit(${habit.id})" class="tap-btn min-w-[40px] min-h-[44px] rounded-xl bg-slate-800/60 text-slate-400 hover:text-rose-400 flex items-center justify-center" title="Xóa thói quen"><i data-lucide="trash-2" class="w-4 h-4"></i></button>
-                        </div>
-                    </div>
-                    <div class="grid grid-cols-7 gap-1.5">${mobileButtonsHtml}</div>
-                `;
-                mobileContainer.appendChild(mCard);
-
-                const tr = document.createElement('tr');
-                tr.dataset.dragItem = 'habit-desktop';
-                tr.dataset.itemId = String(habit.id);
-                tr.className = 'hover:bg-slate-700/30 transition';
-                let daysHtml = '';
-                habit.days.forEach((done, idx) => {
-                    const isToday = idx === todayIdx;
-                    daysHtml += `
-                        <td class="py-2.5 px-1 text-center ${isToday ? 'today-col' : ''}">
-                            <button onclick="toggleDay(${habit.id}, ${idx})" 
-                                class="tap-btn w-9 h-9 rounded-xl inline-flex items-center justify-center border ${
-                                    done ? 'bg-emerald-500 border-emerald-400 text-slate-950 font-extrabold shadow-sm' : isToday ? 'bg-slate-900 border-sky-500/60 text-slate-400' : 'bg-slate-900/70 border-slate-700 text-slate-500'
-                                }">${done ? '✓' : ''}</button>
-                        </td>
-                    `;
-                });
-
-                tr.innerHTML = `
-                    <td class="py-2.5 px-2">
-                        <div class="flex items-center gap-2.5">
-                            <div class="drag-handle min-w-[34px] min-h-[40px] px-1 rounded-xl bg-slate-800/85 hover:bg-slate-700 border border-slate-700/80 text-slate-400 hover:text-sky-300 flex items-center justify-center shrink-0" title="Nhấn giữ và trượt lên/xuống để di chuyển thói quen">
-                                <i data-lucide="grip-vertical" class="w-4 h-4 pointer-events-none"></i>
-                            </div>
-                            <div class="flex-1 min-w-0">
-                                <div onclick="editHabitName(${habit.id})" class="font-semibold text-xs text-slate-100 hover:text-sky-300 cursor-pointer transition">${habit.name}</div>
-                                <div class="w-full bg-slate-900 h-1.5 rounded-full overflow-hidden mt-1 max-w-[180px]">
-                                    <div class="bg-emerald-500 h-full transition-all" style="width: ${weekPct}%"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </td>
-                    ${daysHtml}
-                    <td class="py-2.5 px-2 text-center">
-                        <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-bold ${totalStreak >= 5 ? 'bg-amber-500/20 text-amber-300 border border-amber-500/30' : 'bg-slate-700 text-slate-300'}">🔥 ${totalStreak}d</span>
-                    </td>
-                    <td class="py-2.5 px-1 text-right">
-                        <button onclick="deleteHabit(${habit.id})" class="tap-btn w-9 h-9 rounded-lg bg-slate-800/60 text-slate-400 hover:text-rose-400 inline-flex items-center justify-center" title="Xóa"><i data-lucide="trash-2" class="w-4 h-4"></i></button>
-                    </td>
-                `;
-                tbody.appendChild(tr);
-            });
-
-            document.getElementById('today-summary-badge').textContent = isRecoveryModeActive()
-                ? `🧊 Đang bật Chế độ Hồi phục (Bảo vệ chuỗi Streak) • Hôm nay: ${doneTodayCount}/${habits.length}`
-                : `Hôm nay: ${doneTodayCount}/${habits.length} thói quen`;
-            lucide.createIcons();
-        }
+        function renderTable() {}
 
         // --- ĐIỂM THI A00 & ĐGNL QDA ---
         function switchExamTab(tab) {
@@ -4855,6 +4653,11 @@
                 const s = getTotalStreak(h);
                 if (s > maxStreakOverall) maxStreakOverall = s;
             });
+            let activeSchedDays = 0;
+            DAYS.forEach((_, idx) => {
+                if ((weeklySchedule[idx] || []).some(it => it.done)) activeSchedDays++;
+            });
+            if (activeSchedDays > maxStreakOverall) maxStreakOverall = activeSchedDays;
 
             const h = goal.height || 1.76;
             const currentW = fitness.weights.length > 0 ? fitness.weights[fitness.weights.length - 1].val : 50.5;
@@ -4877,50 +4680,7 @@
         }
 
         function renderCharts() {
-            const habitNames = habits.map(h => h.name.length > 22 ? h.name.substring(0, 22) + '...' : h.name);
-            const streaks = habits.map(h => getTotalStreak(h));
-            const dailyCounts = DAYS.map((_, dayIdx) => habits.reduce((sum, h) => sum + (h.days[dayIdx] ? 1 : 0), 0));
-
-            const ctxStreak = document.getElementById('streakChart').getContext('2d');
-            if (streakChartInstance) streakChartInstance.destroy();
-            streakChartInstance = new Chart(ctxStreak, {
-                type: 'bar',
-                data: {
-                    labels: habitNames,
-                    datasets: [{ label: 'Tổng chuỗi (ngày)', data: streaks, backgroundColor: 'rgba(251, 191, 36, 0.85)', borderRadius: 8 }]
-                },
-                options: {
-                    indexAxis: 'y', responsive: true, maintainAspectRatio: false,
-                    plugins: { legend: { display: false } },
-                    scales: {
-                        x: { beginAtZero: true, ticks: { stepSize: 1, color: '#94a3b8' }, grid: { color: '#334155' } },
-                        y: { ticks: { color: '#e2e8f0', font: { size: 10 } }, grid: { display: false } }
-                    }
-                }
-            });
-
-            const ctxDaily = document.getElementById('dailyProgressChart').getContext('2d');
-            if (dailyChartInstance) dailyChartInstance.destroy();
-            dailyChartInstance = new Chart(ctxDaily, {
-                type: 'line',
-                data: {
-                    labels: DAYS,
-                    datasets: [{
-                        label: 'Mục tiêu hoàn thành', data: dailyCounts,
-                        borderColor: '#34d399', backgroundColor: 'rgba(52, 211, 153, 0.15)',
-                        borderWidth: 3, pointBackgroundColor: '#10b981', pointRadius: 5, fill: true, tension: 0.35
-                    }]
-                },
-                options: {
-                    responsive: true, maintainAspectRatio: false,
-                    plugins: { legend: { display: false } },
-                    scales: {
-                        y: { beginAtZero: true, suggestedMax: Math.max(habits.length, 4), ticks: { stepSize: 1, color: '#94a3b8' }, grid: { color: '#334155' } },
-                        x: { ticks: { color: '#e2e8f0' }, grid: { display: false } }
-                    }
-                }
-            });
-
+            
             const list = activeExamTab === 'A00' ? exams : qdaExams;
             const targetTotal = activeExamTab === 'A00' ? getTargetTotal() : (goal.qdaTarget || 100);
             const examLabels = list.map(e => e.name);
@@ -5324,7 +5084,7 @@
             nmtState.acknowledgedDate = todayDateStr;
             safeSet(KEYS.NMT_STATE, nmtState);
             renderNeverMissTwiceBanner();
-            document.getElementById('sec-habits')?.scrollIntoView({ behavior: 'smooth' });
+            document.getElementById('sec-schedule')?.scrollIntoView({ behavior: 'smooth' });
             showToast('⚔️ Đã nhận lệnh! Hãy hoàn thành trên 50% thói quen hoặc ca học hôm nay để lấy lại thế trận!');
         }
 
